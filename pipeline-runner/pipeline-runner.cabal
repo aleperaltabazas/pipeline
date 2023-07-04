@@ -1,0 +1,73 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.35.2.
+--
+-- see: https://github.com/sol/hpack
+
+name:           pipeline-runner
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/aleperaltabazas/pipeline/pipeline-runner#readme>
+homepage:       https://github.com/aleperaltabazas/pipeline-runner#readme
+bug-reports:    https://github.com/aleperaltabazas/pipeline-runner/issues
+author:         Alejandro Peralta Bazas
+maintainer:     aleperaltabazas@gmail.com
+copyright:      2023 Alejandro Peralta Bazas
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/aleperaltabazas/pipeline-runner
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_pipeline_runner
+  hs-source-dirs:
+      src
+  default-extensions:
+      QuasiQuotes
+      NoImplicitPrelude
+      DeriveGeneric
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable pipeline-runner-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_pipeline_runner
+  hs-source-dirs:
+      app
+  default-extensions:
+      QuasiQuotes
+      NoImplicitPrelude
+      DeriveGeneric
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , pipeline-runner
+  default-language: Haskell2010
+
+test-suite pipeline-runner-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_pipeline_runner
+  hs-source-dirs:
+      test
+  default-extensions:
+      QuasiQuotes
+      NoImplicitPrelude
+      DeriveGeneric
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , pipeline-runner
+  default-language: Haskell2010
